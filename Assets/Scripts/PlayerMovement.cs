@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -7,19 +8,23 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 1f;
     public float jumpDuration = 0.8f;
     public float fallSpeed = 2f;
+
     private float jumpStartTime;
 
-    private bool isJumping = false;
-    private bool isGrounded = false;
-    private bool isFalling = false;
+    public bool isJumping = false;
+    public bool isGrounded = false;
+    public bool isFalling = false;
 
     private Vector3 originalPosition;
 
     private Collider2D playerCollider;
 
+    public Rigidbody2D player;
+
     void Start()
     {
         playerCollider = GetComponent<Collider2D>();
+        isGrounded = true;
     }
 
     void Update()
@@ -34,11 +39,6 @@ public class PlayerMovement : MonoBehaviour
         if (isJumping)
         {
             HandleJump();
-        }
-
-        if (isGrounded)
-        {
-            Die();
         }
     }
 
@@ -64,12 +64,14 @@ public class PlayerMovement : MonoBehaviour
             moveX = +1f;
         }
 
-        Vector3 move = new Vector3(moveX, moveY, 0f).normalized;
-        transform.position += move * moveSpeed * Time.deltaTime;
+        Vector2 move = new Vector2(moveX, moveY).normalized;
+        player.velocity = move * moveSpeed;
     }
 
     void Jump()
     {
+        Physics2D.IgnoreLayerCollision((LayerMask.NameToLayer("Oblivion")), (LayerMask.NameToLayer("Default")), true);
+
         isJumping = true;
         isGrounded = false;
         jumpStartTime = Time.time;
@@ -88,8 +90,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            Physics2D.IgnoreLayerCollision((LayerMask.NameToLayer("Oblivion")), (LayerMask.NameToLayer("Default")), false);
             isJumping = false;
             isGrounded = true;
+            Die();
         }
     }
 
@@ -97,35 +101,29 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Oblivion")))
         {
-            Debug.Log("Player hit the Oblivion layer and will be destroyed.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+            Debug.Log("DEAD");
+            StartCoroutine(ReloadSceneAfterDelay(1f)); 
         }
+    }
+
+    IEnumerator ReloadSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = true;
-            Debug.Log("Player is grounded.");
+            Debug.Log("On Platform");
         }
-    }
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
-        {
-            isGrounded = false;
-            Debug.Log("Player left the ground.");
-        }
-    }
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Oblivion") && isGrounded)
-        {
-            Debug.Log("Player is touching the Oblivion layer while grounded and will be destroyed.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+        if (collision.gameObject.CompareTag("Oblivion"))
+        {   
+            Debug.Log("On Oblivion");
+            Die();
         }
     }
 }
