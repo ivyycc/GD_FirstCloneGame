@@ -65,7 +65,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector2 move = new Vector2(moveX, moveY).normalized;
-        player.velocity = move * moveSpeed;
+        if (!isJumping)
+        {
+            player.velocity = move * moveSpeed;
+        }
+        else
+        {
+            player.velocity = new Vector2(moveX * moveSpeed, player.velocity.y);
+        }
+
+        //Vector2 move = new Vector2(moveX, moveY).normalized;
+        //player.velocity = move * moveSpeed;
     }
 
     void Jump()
@@ -85,8 +95,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (progress < 1f)
         {
-            float height = Mathf.Sin(Mathf.PI * progress) * jumpHeight;
-            transform.position = new Vector3(transform.position.x, originalPosition.y + height, transform.position.z);
+             float height = Mathf.Sin(Mathf.PI * progress) * jumpHeight;
+             transform.position = new Vector3(transform.position.x, originalPosition.y + height, transform.position.z);
         }
         else
         {
@@ -94,6 +104,11 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
             isGrounded = true;
             Die();
+        }
+
+        if (isJumping && Input.GetKey(KeyCode.W))
+        {
+            transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
         }
     }
 
@@ -114,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
             Debug.Log("On Platform");
