@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
+
         float moveX = 0f;
         float moveY = 0f;
 
@@ -65,13 +66,30 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector2 move = new Vector2(moveX, moveY).normalized;
-        if (!isJumping)
+
+        if (isJumping)
         {
-            player.velocity = move * moveSpeed;
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
+                player.velocity = new Vector2(moveX * moveSpeed, 0); 
+            }
+            else
+            {
+                player.velocity = new Vector2(moveX * moveSpeed, player.velocity.y);
+            }
         }
         else
         {
-            player.velocity = new Vector2(moveX * moveSpeed, player.velocity.y);
+            player.velocity = move * moveSpeed;
+        }
+
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Space))
+        {
+            // Immediately move downward by jumpHeight
+            transform.position = new Vector3(transform.position.x, originalPosition.y - jumpHeight, transform.position.z);
+            // Ensure vertical velocity reflects downward jump
+            player.velocity = new Vector2(moveX * moveSpeed, -fallSpeed);
         }
 
         //Vector2 move = new Vector2(moveX, moveY).normalized;
@@ -110,6 +128,8 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
         }
+
+
     }
 
     void Die()
