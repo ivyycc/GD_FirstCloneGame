@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Oblivion
+  - Platform
+  - Jumpable
+  - NonJumpable
   layers:
   - Default
   - TransparentFX
@@ -11,6 +15,9 @@ TagManager:
   - 
   - Water
   - UI
+  - Oblivion
+  - Platform
+  - Hole
   - 
   - 
   - 
@@ -22,9 +29,12 @@ TagManager:
   - 
   - 
   - 
+<<<<<<< HEAD
   - 
   - 
   - 
+=======
+>>>>>>> Ivy
   - Layer 1
   - Layer 2
   - Layer 3

@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 23
+<<<<<<< HEAD
   productGUID: 3bd3e4d182e8ebd439c1cde6697c5bb2
+=======
+  productGUID: ad7640e242efa4b4893f985c7c3e2cfc
+>>>>>>> Ivy
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
