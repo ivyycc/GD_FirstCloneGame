@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
+
         float moveX = 0f;
         float moveY = 0f;
 
@@ -65,7 +66,34 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector2 move = new Vector2(moveX, moveY).normalized;
-        player.velocity = move * moveSpeed;
+
+        if (isJumping)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
+                player.velocity = new Vector2(moveX * moveSpeed, 0); 
+            }
+            else
+            {
+                player.velocity = new Vector2(moveX * moveSpeed, player.velocity.y);
+            }
+        }
+        else
+        {
+            player.velocity = move * moveSpeed;
+        }
+
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Space))
+        {
+            // Immediately move downward by jumpHeight
+            transform.position = new Vector3(transform.position.x, originalPosition.y - jumpHeight, transform.position.z);
+            // Ensure vertical velocity reflects downward jump
+            player.velocity = new Vector2(moveX * moveSpeed, -fallSpeed);
+        }
+
+        //Vector2 move = new Vector2(moveX, moveY).normalized;
+        //player.velocity = move * moveSpeed;
     }
 
     void Jump()
@@ -85,8 +113,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (progress < 1f)
         {
-            float height = Mathf.Sin(Mathf.PI * progress) * jumpHeight;
-            transform.position = new Vector3(transform.position.x, originalPosition.y + height, transform.position.z);
+             float height = Mathf.Sin(Mathf.PI * progress) * jumpHeight;
+             transform.position = new Vector3(transform.position.x, originalPosition.y + height, transform.position.z);
         }
         else
         {
@@ -95,6 +123,13 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             Die();
         }
+
+        if (isJumping && Input.GetKey(KeyCode.W))
+        {
+            transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
+        }
+
+
     }
 
     void Die()
@@ -114,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
             Debug.Log("On Platform");
