@@ -84,11 +84,10 @@ public class PlayerMovement : MonoBehaviour
             player.velocity = move * moveSpeed;
         }
 
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.S))
         {
-            // Immediately move downward by jumpHeight
+
             transform.position = new Vector3(transform.position.x, originalPosition.y - jumpHeight, transform.position.z);
-            // Ensure vertical velocity reflects downward jump
             player.velocity = new Vector2(moveX * moveSpeed, -fallSpeed);
         }
 
