@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isJumping)
         {
-            HandleJump();
+            //HandleJump();
         }
     }
 
@@ -67,17 +67,18 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 move = new Vector2(moveX, moveY).normalized;
 
-        if (isJumping)
+        if (isJumping && 1==0)
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
-                player.velocity = new Vector2(moveX * moveSpeed, 0); 
-            }
-            else
-            {
-                player.velocity = new Vector2(moveX * moveSpeed, player.velocity.y);
-            }
+            //if (Input.GetKey(KeyCode.W))
+            //{
+            //    transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
+            //    player.velocity = new Vector2(moveX * moveSpeed, 0); 
+            //}
+            //else
+            //{
+            //    player.velocity = new Vector2(moveX * moveSpeed, player.velocity.y);
+            //}
+            //player.velocity = new Vector2(moveX * moveSpeed, player.velocity.y);
         }
         else
         {
@@ -103,6 +104,18 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
         jumpStartTime = Time.time;
         originalPosition = transform.position;
+
+        StartCoroutine(StartJump());
+    }
+
+    IEnumerator StartJump()
+    {
+        GetComponent<SpriteRenderer>().color = Color.grey;
+        yield return new WaitForSeconds(1f);
+        GetComponent<SpriteRenderer>().color = Color.black;
+        Physics2D.IgnoreLayerCollision((LayerMask.NameToLayer("Oblivion")), (LayerMask.NameToLayer("Default")), false);
+        isJumping = false;
+
     }
 
     void HandleJump()
