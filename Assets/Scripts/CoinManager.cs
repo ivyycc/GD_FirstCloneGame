@@ -1,54 +1,23 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; 
-using System.Collections.Generic;
-using System.Collections;
 
 public class CoinManager : MonoBehaviour
 {
     public int totalCoins;
     private int collectedCoins = 0;
-    public List<GameObject> successImages; 
-    public string nextSceneName; 
-    public float delayBeforeLoading = 3f; 
+    public GameObject successImage; 
 
     void Start()
     {
-        
-        foreach (GameObject successImage in successImages)
-        {
-            successImage.SetActive(false);
-        }
+        successImage.SetActive(false);
     }
 
     public void CollectCoin()
     {
-        if (collectedCoins < totalCoins && collectedCoins < successImages.Count)
-        {
-            successImages[collectedCoins].SetActive(true); 
-            collectedCoins++;
-        }
-
+        collectedCoins++;
         if (collectedCoins >= totalCoins)
         {
-            Debug.Log("All coins collected!");
-            StartCoroutine(LoadNextSceneWithDelay()); 
-        }
-    }
-
-    private IEnumerator LoadNextSceneWithDelay()
-    {
-        
-        yield return new WaitForSeconds(delayBeforeLoading);
-
-        
-        if (!string.IsNullOrEmpty(nextSceneName))
-        {
-            SceneManager.LoadScene(nextSceneName);
-        }
-        else
-        {
-            Debug.LogWarning("Next scene name is not set.");
+            successImage.SetActive(true);
         }
     }
 }

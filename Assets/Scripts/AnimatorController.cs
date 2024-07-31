@@ -18,20 +18,10 @@ public class AnimatorController : MonoBehaviour
 
     void HandleAnimations()
     {
-        
-        bool isRunning = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
+        // Check if the player is moving
+        bool isMoving = Mathf.Abs(playerMovement.player.velocity.x) > 0.1f || Mathf.Abs(playerMovement.player.velocity.y) > 0.1f;
 
-        
-        bool isJumping = playerMovement.isJumping;
-
-       
-        animator.SetBool("isRunning", isRunning);
-        animator.SetBool("isJumping", isJumping);
-
-        
-        if (!isRunning && !isJumping)
-        {
-            animator.SetBool("isRunning", false);
-        }
+        // Set the animation parameter based on movement
+        animator.SetBool("isRunning", isMoving);
     }
 }
