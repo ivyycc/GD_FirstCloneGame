@@ -84,13 +84,12 @@ public class PlayerMovement : MonoBehaviour
         {
             player.velocity = move * moveSpeed;
         }
+       // if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.S))
+       // {
 
-        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.S))
-        {
-
-            transform.position = new Vector3(transform.position.x, originalPosition.y - jumpHeight, transform.position.z);
-            player.velocity = new Vector2(moveX * moveSpeed, -fallSpeed);
-        }
+       ///     transform.position = new Vector3(transform.position.x, originalPosition.y - jumpHeight, transform.position.z);
+       //     player.velocity = new Vector2(moveX * moveSpeed, -fallSpeed);
+       // }
 
         //Vector2 move = new Vector2(moveX, moveY).normalized;
         //player.velocity = move * moveSpeed;
@@ -136,10 +135,10 @@ public class PlayerMovement : MonoBehaviour
             Die();
         }
 
-        if (isJumping && Input.GetKey(KeyCode.W))
-        {
-            transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
-        }
+       // if (isJumping && Input.GetKey(KeyCode.W))
+       // {
+       //     transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
+       // }
 
 
     }
