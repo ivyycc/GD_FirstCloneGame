@@ -18,10 +18,10 @@ public class AnimatorController : MonoBehaviour
 
     void HandleAnimations()
     {
-        // Check if the player is moving
         bool isMoving = Mathf.Abs(playerMovement.player.velocity.x) > 0.1f || Mathf.Abs(playerMovement.player.velocity.y) > 0.1f;
+        bool isJumping = playerMovement.isJumping;
 
-        // Set the animation parameter based on movement
         animator.SetBool("isRunning", isMoving);
+        animator.SetBool("isJumping", isJumping);
     }
 }
