@@ -13,6 +13,7 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.collectFloatie, this.transform.position);
             coinManager.CollectCoin();
             Destroy(gameObject);
         }

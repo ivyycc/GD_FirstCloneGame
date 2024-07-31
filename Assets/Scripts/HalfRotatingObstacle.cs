@@ -22,6 +22,7 @@ public class FullRotatingObstacle : MonoBehaviour
         PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
         if (other.CompareTag(targetTag) && playerMovement != null && !playerMovement.isJumping)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.playerHit, this.transform.position);
             ReloadScene();
         }
     }

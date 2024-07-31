@@ -21,10 +21,17 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D player;
 
+    public int landCount;
+    public string PlayerStateEvent = "";
+
+    FMOD.Studio.EventInstance playerState;
+
     void Start()
     {
         playerCollider = GetComponent<Collider2D>();
         isGrounded = true;
+        playerState = FMODUnity.RuntimeManager.CreateInstance(PlayerStateEvent);
+        playerState.start();
     }
 
     void Update()
@@ -33,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.playerJump, this.transform.position);
             Jump();
         }
 
@@ -115,6 +123,7 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.IgnoreLayerCollision((LayerMask.NameToLayer("Oblivion")), (LayerMask.NameToLayer("Default")), false);
         isJumping = false;
 
+
     }
 
     void HandleJump()
@@ -162,12 +171,23 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Ground"))
         {
+            landCount++;
             isGrounded = true;
+
+            if(landCount==1)
+            {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerLand, this.transform.position);
+            }
+            else if(landCount>1)
+            {
+                playerState.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
             Debug.Log("On Platform");
         }
 
         if (collision.gameObject.CompareTag("Oblivion"))
-        {   
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.playerOblivion, this.transform.position);
             Debug.Log("On Oblivion");
             Die();
         }
