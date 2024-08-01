@@ -261,6 +261,75 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &110118175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.1212127
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9197615
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.31469
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491090, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275942711779491091, guid: a00653bd40f728145b61fc95bf4dea37,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a00653bd40f728145b61fc95bf4dea37, type: 3}
 --- !u!1001 &181765473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -522,6 +591,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c870cbac82323364b92b5e33ee92453a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  landCount: 0
+  PlayerStateEvent: 
+  hasJumped: 0
 --- !u!95 &263136040
 Animator:
   serializedVersion: 5
@@ -558,7 +630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 468510441}
   - component: {fileID: 468510440}
-  - component: {fileID: 468510439}
+  - component: {fileID: 468510442}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -566,14 +638,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &468510439
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468510438}
-  m_Enabled: 1
 --- !u!20 &468510440
 Camera:
   m_ObjectHideFlags: 0
@@ -632,6 +696,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &468510442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468510438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 263136038}
 --- !u!1 &607678965
 GameObject:
   m_ObjectHideFlags: 0
@@ -12368,6 +12445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c870cbac82323364b92b5e33ee92453a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  landCount: 0
+  PlayerStateEvent: 
+  hasJumped: 0
 --- !u!114 &1836821987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12388,6 +12468,8 @@ MonoBehaviour:
   isGrounded: 0
   isFalling: 0
   player: {fileID: 2126284560}
+  landCount: 0
+  PlayerStateEvent: 
 --- !u!1 &1961267753
 GameObject:
   m_ObjectHideFlags: 0
