@@ -31,6 +31,7 @@ public class CoinManager : MonoBehaviour
 
         if (collectedCoins >= totalCoins)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.levelUp, this.transform.position);
             Debug.Log("All coins collected!");
             StartCoroutine(LoadNextSceneWithDelay()); 
         }

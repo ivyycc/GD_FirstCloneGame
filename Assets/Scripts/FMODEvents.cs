@@ -13,6 +13,7 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Other SFX")]
     [field: SerializeField] public EventReference collectFloatie { get; private set; }
+    [field: SerializeField] public EventReference levelUp { get; private set; }
 
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference playerJump { get; private set; }
