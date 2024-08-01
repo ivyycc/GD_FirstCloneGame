@@ -46,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (isJumping)
         {
-            //HandleJump();
         }
     }
 
@@ -77,30 +76,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (isJumping && 1==0)
         {
-            //if (Input.GetKey(KeyCode.W))
-            //{
-            //    transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
-            //    player.velocity = new Vector2(moveX * moveSpeed, 0); 
-            //}
-            //else
-            //{
-            //    player.velocity = new Vector2(moveX * moveSpeed, player.velocity.y);
-            //}
-            //player.velocity = new Vector2(moveX * moveSpeed, player.velocity.y);
+            
         }
         else
         {
             player.velocity = move * moveSpeed;
         }
-       // if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.S))
-       // {
-
-       ///     transform.position = new Vector3(transform.position.x, originalPosition.y - jumpHeight, transform.position.z);
-       //     player.velocity = new Vector2(moveX * moveSpeed, -fallSpeed);
-       // }
-
-        //Vector2 move = new Vector2(moveX, moveY).normalized;
-        //player.velocity = move * moveSpeed;
     }
 
     void Jump()
@@ -117,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator StartJump()
     {
-        GetComponent<SpriteRenderer>().color = Color.grey;
+        GetComponent<SpriteRenderer>().color = Color.black;
         yield return new WaitForSeconds(1f);
         GetComponent<SpriteRenderer>().color = Color.black;
         Physics2D.IgnoreLayerCollision((LayerMask.NameToLayer("Oblivion")), (LayerMask.NameToLayer("Default")), false);
@@ -143,12 +124,6 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             Die();
         }
-
-       // if (isJumping && Input.GetKey(KeyCode.W))
-       // {
-       //     transform.position = new Vector3(transform.position.x, originalPosition.y + jumpHeight, transform.position.z);
-       // }
-
 
     }
 
