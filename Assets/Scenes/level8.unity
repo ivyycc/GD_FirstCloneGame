@@ -10421,7 +10421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7127df8d2d9207f44b9f1856461e94de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 120
+  rotationSpeed: 60
   targetTag: Player
 --- !u!61 &889434976
 BoxCollider2D:
@@ -12894,7 +12894,7 @@ PrefabInstance:
     - target: {fileID: 4433266384153141395, guid: 6f3ca302c96c2ae4cb207d2f14d8b8b4,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4433266384153141396, guid: 6f3ca302c96c2ae4cb207d2f14d8b8b4,
         type: 3}
