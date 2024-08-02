@@ -139,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator ReloadSceneAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

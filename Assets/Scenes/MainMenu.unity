@@ -1406,7 +1406,7 @@ PrefabInstance:
     - target: {fileID: 3275942711424087969, guid: a00653bd40f728145b61fc95bf4dea37,
         type: 3}
       propertyPath: <play>k__BackingField.Path
-      value: event:/selectLevel
+      value: event:/SFX/selectLevel
       objectReference: {fileID: 0}
     - target: {fileID: 3275942711424087969, guid: a00653bd40f728145b61fc95bf4dea37,
         type: 3}
@@ -1500,17 +1500,22 @@ PrefabInstance:
     - target: {fileID: 7828849821708130290, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7828849821730624360, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7828849821787262377, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}
       propertyPath: m_Name
       value: Settings Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828849821787262377, guid: 99d4bec25f3487a4b872b2158f72a43a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7828849821787262381, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}
@@ -1620,22 +1625,22 @@ PrefabInstance:
     - target: {fileID: 7828849822357613967, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7828849822686164938, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7828849822737103205, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7828849823265903901, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}

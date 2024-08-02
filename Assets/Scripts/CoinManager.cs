@@ -45,7 +45,7 @@ public class CoinManager : MonoBehaviour
         
         if (!string.IsNullOrEmpty(nextSceneName))
         {
-            SceneManager.LoadScene(nextSceneName);
+            SceneManager.LoadScene(nextSceneName, LoadSceneMode.Single);
         }
         else
         {

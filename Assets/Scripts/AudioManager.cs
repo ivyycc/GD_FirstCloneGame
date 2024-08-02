@@ -31,25 +31,33 @@ public class AudioManager : MonoBehaviour
 
     public void Awake()
     {
-        if (instance != null)
+        if (instance != null && instance != this)
         {
             Debug.LogError("Found more than one Audio Manager in the scene");
+            Destroy(gameObject);
+            return;
         }
 
         instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        
 
         eventInst = new List<EventInstance>();
 
         // eventEmitters = new List<StudioEventEmitter>();
 
         masterBus = RuntimeManager.GetBus("bus:/");
-       // musicBus = RuntimeManager.GetBus("bus:/Music");
-        //sfxBus = RuntimeManager.GetBus("bus:/SFX");
+        // musicBus = RuntimeManager.GetBus("bus:/Music");
+        //sfxBus = RuntimeManager.GetBus("bus:/SFX")
+        
+
+        InitializeMusic(FMODEvents.instance.Music);
     }
 
     public void Start()
     {
-        InitializeMusic(FMODEvents.instance.Music);
+        //InitializeMusic(FMODEvents.instance.Music);
 
     }
 

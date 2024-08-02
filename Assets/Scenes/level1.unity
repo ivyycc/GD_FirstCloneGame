@@ -14035,6 +14035,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PausePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 7562449734112349226, guid: 9067c390c177b7944b4afc18d1748a02,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7562449735312642432, guid: 9067c390c177b7944b4afc18d1748a02,
         type: 3}
       propertyPath: m_Text

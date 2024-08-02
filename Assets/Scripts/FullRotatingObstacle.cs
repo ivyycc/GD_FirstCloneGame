@@ -64,7 +64,7 @@ public class HalfRotatingObstacle : MonoBehaviour
     void ReloadScene()
     {
         Debug.Log("DEAD");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 }
 
