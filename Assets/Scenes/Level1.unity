@@ -13971,17 +13971,17 @@ PrefabInstance:
     - target: {fileID: 3275942711424087969, guid: a00653bd40f728145b61fc95bf4dea37,
         type: 3}
       propertyPath: <play>k__BackingField.Path
-      value: event:/NextLevel
+      value: event:/SFX/NextLevel
       objectReference: {fileID: 0}
     - target: {fileID: 3275942711424087969, guid: a00653bd40f728145b61fc95bf4dea37,
         type: 3}
       propertyPath: <quit>k__BackingField.Path
-      value: event:/Oblivion
+      value: event:/SFX/Oblivion
       objectReference: {fileID: 0}
     - target: {fileID: 3275942711424087969, guid: a00653bd40f728145b61fc95bf4dea37,
         type: 3}
       propertyPath: <Music>k__BackingField.Path
-      value: event:/BackgroundMusic
+      value: event:/Music/BackgroundMusic
       objectReference: {fileID: 0}
     - target: {fileID: 3275942711424087969, guid: a00653bd40f728145b61fc95bf4dea37,
         type: 3}
