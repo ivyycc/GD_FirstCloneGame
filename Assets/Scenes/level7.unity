@@ -721,7 +721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landCount: 0
-  PlayerStateEvent: 
   hasJumped: 0
 --- !u!114 &450534757
 MonoBehaviour:
@@ -744,7 +743,6 @@ MonoBehaviour:
   isFalling: 0
   player: {fileID: 872706071}
   landCount: 0
-  PlayerStateEvent: 
 --- !u!1 &451559392
 GameObject:
   m_ObjectHideFlags: 0
@@ -10887,7 +10885,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landCount: 0
-  PlayerStateEvent: 
   hasJumped: 0
 --- !u!95 &1105617565
 Animator:
@@ -10986,7 +10983,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Settings
+  m_Text: SETTINGS
 --- !u!222 &1222108846
 CanvasRenderer:
   m_ObjectHideFlags: 0

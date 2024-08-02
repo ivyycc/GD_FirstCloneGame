@@ -14350,7 +14350,7 @@ PrefabInstance:
     - target: {fileID: 7562449735312642432, guid: 9067c390c177b7944b4afc18d1748a02,
         type: 3}
       propertyPath: m_Text
-      value: Settings
+      value: SETTINGS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9067c390c177b7944b4afc18d1748a02, type: 3}
