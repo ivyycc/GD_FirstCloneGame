@@ -22,6 +22,7 @@ public class GamePause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.select, this.transform.position);
             TogglePause();
         }
     }

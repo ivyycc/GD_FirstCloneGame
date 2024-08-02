@@ -13,11 +13,12 @@ public class ChangeScene : MonoBehaviour
     }
     public void StartGame()
     {
-        
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.play, this.transform.position);
         SceneManager.LoadScene(1);
     }
     public void QuitGame()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.quit, this.transform.position);
         Application.Quit();
     }
 }
