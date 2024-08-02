@@ -50,70 +50,70 @@ MonoBehaviour:
       Data2: 1154243824
       Data3: 1521497007
       Data4: -1238358864
-    Path: event:/selectLevel
+    Path: event:/SFX/selectLevel
   <play>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -325377434
+      Data2: 1121882448
+      Data3: -436110428
+      Data4: 1880385906
+    Path: event:/SFX/NextLevel
   <quit>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -413680581
+      Data2: 1182234651
+      Data3: -736379988
+      Data4: -1891923688
+    Path: event:/SFX/Oblivion
   <collectFloatie>k__BackingField:
     Guid:
       Data1: 467647839
       Data2: 1321292271
       Data3: 2141408167
       Data4: 1635407491
-    Path: event:/collectCoin
+    Path: event:/SFX/collectCoin
   <levelUp>k__BackingField:
     Guid:
       Data1: -325377434
       Data2: 1121882448
       Data3: -436110428
       Data4: 1880385906
-    Path: event:/NextLevel
+    Path: event:/SFX/NextLevel
   <playerJump>k__BackingField:
     Guid:
       Data1: 619465217
       Data2: 1102852035
       Data3: -777448831
       Data4: 361548563
-    Path: event:/playerJump
+    Path: event:/SFX/playerJump
   <playerOblivion>k__BackingField:
     Guid:
       Data1: -413680581
       Data2: 1182234651
       Data3: -736379988
       Data4: -1891923688
-    Path: event:/Oblivion
+    Path: event:/SFX/Oblivion
   <playerHit>k__BackingField:
     Guid:
       Data1: -2091310870
       Data2: 1254659117
       Data3: 302398339
       Data4: -820116236
-    Path: event:/ObstacleHit
+    Path: event:/SFX/ObstacleHit
   <playerLand>k__BackingField:
     Guid:
       Data1: -1777229709
       Data2: 1262717106
       Data3: 662678201
       Data4: -1861143863
-    Path: event:/playerLand
+    Path: event:/SFX/playerLand
   <Music>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 106429269
+      Data2: 1138188614
+      Data3: -564202092
+      Data4: 582265320
+    Path: event:/Music/BackgroundMusic
 --- !u!1 &3275942711779491091
 GameObject:
   m_ObjectHideFlags: 0

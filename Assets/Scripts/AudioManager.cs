@@ -43,8 +43,8 @@ public class AudioManager : MonoBehaviour
         // eventEmitters = new List<StudioEventEmitter>();
 
         masterBus = RuntimeManager.GetBus("bus:/");
-        musicBus = RuntimeManager.GetBus("bus:/Music");
-        sfxBus = RuntimeManager.GetBus("bus:/SFX");
+       // musicBus = RuntimeManager.GetBus("bus:/Music");
+        //sfxBus = RuntimeManager.GetBus("bus:/SFX");
     }
 
     public void Start()
@@ -56,8 +56,8 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         masterBus.setVolume(masterVolume);
-        musicBus.setVolume(musicVolume);
-        sfxBus.setVolume(SFXVolume);
+        //musicBus.setVolume(musicVolume);
+        //sfxBus.setVolume(SFXVolume);
     }
 
 
@@ -79,6 +79,7 @@ public class AudioManager : MonoBehaviour
     {
         musicEventInstance = CreateEventInstance(musicEventReference);
         musicEventInstance.start();
+        Debug.Log("MUSIC STARTED");
     }
 
 
