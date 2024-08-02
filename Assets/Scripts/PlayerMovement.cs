@@ -22,16 +22,16 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D player;
 
     public int landCount;
-    public string PlayerStateEvent = "";
+    //public string PlayerStateEvent = "";
 
-    FMOD.Studio.EventInstance playerState;
+    //FMOD.Studio.EventInstance playerState;
 
     void Start()
     {
         playerCollider = GetComponent<Collider2D>();
         isGrounded = true;
-        playerState = FMODUnity.RuntimeManager.CreateInstance(PlayerStateEvent);
-        playerState.start();
+       // playerState = FMODUnity.RuntimeManager.CreateInstance(PlayerStateEvent);
+       // playerState.start();
     }
 
     void Update()
@@ -149,14 +149,6 @@ public class PlayerMovement : MonoBehaviour
             landCount++;
             isGrounded = true;
 
-            if(landCount==1)
-            {
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerLand, this.transform.position);
-            }
-            else if(landCount>1)
-            {
-                playerState.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            }
             Debug.Log("On Platform");
         }
 

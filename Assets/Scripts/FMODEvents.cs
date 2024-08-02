@@ -28,10 +28,16 @@ public class FMODEvents : MonoBehaviour
 
     public void Awake()
     {
-        if (instance != null)
+
+        if (instance != null) //&& instance != this)
         {
-            Debug.LogError("Found more than one FMOD Events in the scene");
+            Debug.LogError("Found more than one Audio Manager in the scene");
+           // Destroy(gameObject);
+            //return;
         }
+
         instance = this;
+       // DontDestroyOnLoad(gameObject);
+        
     }
 }

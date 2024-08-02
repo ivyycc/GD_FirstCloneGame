@@ -310,7 +310,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1868259317}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -602,6 +602,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1748717494}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: Settings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1748717494}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: MoveToScene
         m_Mode: 3
         m_Arguments:
@@ -770,7 +782,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landCount: 0
-  PlayerStateEvent: 
   hasJumped: 0
 --- !u!114 &377778434
 MonoBehaviour:
@@ -793,7 +804,6 @@ MonoBehaviour:
   isFalling: 0
   player: {fileID: 1276445803}
   landCount: 0
-  PlayerStateEvent: 
 --- !u!1 &389534391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,13 +1038,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1868259316}
     - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1748717494}
+    - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ChangeScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828849823493368011, guid: 99d4bec25f3487a4b872b2158f72a43a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99d4bec25f3487a4b872b2158f72a43a, type: 3}
@@ -1535,7 +1585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landCount: 0
-  PlayerStateEvent: 
   hasJumped: 0
 --- !u!95 &892351857
 Animator:
@@ -10198,7 +10247,7 @@ RectTransform:
   m_Children:
   - {fileID: 724569924}
   m_Father: {fileID: 1868259317}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10260,6 +10309,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1748717494}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: Settings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 461949922}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -10598,6 +10659,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1748717494}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: Settings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1775074923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10674,7 +10747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1868259317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10689,8 +10762,8 @@ RectTransform:
   m_Children:
   - {fileID: 1775074925}
   - {fileID: 361482330}
-  - {fileID: 226828351}
   - {fileID: 1501646607}
+  - {fileID: 226828351}
   m_Father: {fileID: 1748717499}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

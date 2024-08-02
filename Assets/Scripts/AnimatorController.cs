@@ -6,18 +6,36 @@ public class AnimatorController : MonoBehaviour
     private PlayerMovement playerMovement;
 
     public int landCount;
-    public string PlayerStateEvent = "";
+   // public string PlayerStateEvent = "";
 
     public bool hasJumped;
 
-    FMOD.Studio.EventInstance playerState;
+    //FMOD.Studio.EventInstance playerState;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
+
+
+        /*
+        FMODUnity.RuntimeManager.LoadBank("Master");
+
+        // Log the event path
+        Debug.Log("PlayerStateEvent: " + PlayerStateEvent);
+
         playerState = FMODUnity.RuntimeManager.CreateInstance(PlayerStateEvent);
-        playerState.start();
+
+
+        if (playerState.isValid())
+        {
+            playerState.start();
+        }
+        else
+        {
+            Debug.LogError("Failed to create event instance for " + PlayerStateEvent);
+        }*/
+       
     }
 
     void Update()
@@ -48,17 +66,12 @@ public class AnimatorController : MonoBehaviour
 
             if (landCount == 1)
             {
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.playerLand, this.transform.position);
+                //AudioManager.instance.PlayOneShot(FMODEvents.instance.playerLand, this.transform.position);
             }
             else if (landCount > 1)
             {
-                playerState.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+               // playerState.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
         }
-
-        
-
-        
-        
     }
 }

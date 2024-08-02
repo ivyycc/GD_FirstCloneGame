@@ -21,4 +21,9 @@ public class ChangeScene : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.quit, this.transform.position);
         Application.Quit();
     }
+
+    public void Settings()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.select, this.transform.position);
+    }
 }
