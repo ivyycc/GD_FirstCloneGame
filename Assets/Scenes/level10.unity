@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7127df8d2d9207f44b9f1856461e94de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 60
+  rotationSpeed: 30
   targetTag: Player
 --- !u!61 &1028837673
 BoxCollider2D:

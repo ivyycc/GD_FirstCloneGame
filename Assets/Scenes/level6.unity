@@ -907,6 +907,7 @@ GameObject:
   - component: {fileID: 789005342}
   - component: {fileID: 789005341}
   - component: {fileID: 789005340}
+  - component: {fileID: 789005344}
   m_Layer: 0
   m_Name: 360-Obstacle
   m_TagString: Untagged
@@ -921,12 +922,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789005339}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7127df8d2d9207f44b9f1856461e94de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 60
+  rotationSpeed: 30
   targetTag: Player
 --- !u!61 &789005341
 BoxCollider2D:
@@ -1015,13 +1016,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789005339}
   m_LocalRotation: {x: -0, y: -0, z: -0.2645089, w: 0.9643833}
-  m_LocalPosition: {x: 4, y: 2.88, z: 0}
-  m_LocalScale: {x: 11.201451, y: 0.6382538, z: 1.4652004}
+  m_LocalPosition: {x: 3.66, y: 2.88, z: 0}
+  m_LocalScale: {x: 9, y: 0.6382538, z: 1.4652004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30.676}
+--- !u!114 &789005344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789005339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aef8eec1cea3b84584c4cd4280872c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30
+  rotationAngle: 180
+  targetTag: Player
 --- !u!1001 &825115288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13944,7 +13960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7127df8d2d9207f44b9f1856461e94de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 60
+  rotationSpeed: 30
   targetTag: Player
 --- !u!61 &1930164161
 BoxCollider2D:
@@ -14033,8 +14049,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930164159}
   m_LocalRotation: {x: -0, y: -0, z: -0.9078775, w: 0.41923565}
-  m_LocalPosition: {x: -3.05, y: -1.52, z: 0}
-  m_LocalScale: {x: 11.201451, y: 0.6382538, z: 1.4652004}
+  m_LocalPosition: {x: -3.3899999, y: -1.52, z: 0}
+  m_LocalScale: {x: 9, y: 0.6382538, z: 1.4652004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
